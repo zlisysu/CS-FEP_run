@@ -1,0 +1,26 @@
+
+ NSTEP =      100   TIME(PS) =     140.200  TEMP(K) =   292.77  PRESS =     0.0
+ Etot   =    -11680.9175  EKtot   =      2620.7027  EPtot      =    -14301.6202
+ BOND   =        12.6236  ANGLE   =        28.6674  DIHED      =        38.8128
+ 1-4 NB =        16.6858  1-4 EEL =      -481.1137  VDWAALS    =      2042.3608
+ EELEC  =    -15975.6671  EHBOND  =         0.0000  RESTRAINT  =        16.0102
+ EAMBER (non-restraint)  =    -14317.6304
+ EKCMT  =         0.0000  VIRIAL  =         0.0000  VOLUME     =     45955.8029
+                                                    Density    =         0.9773
+ DV/DL  =      -144.4333
+ ------------------------------------------------------------------------------
+| Current Timing Info
+| -------------------
+| Total steps:     80000 | Completed:       100 (  0.1%) | Remaining:     79900
+|
+| Average timings for last     100 steps:
+|     Elapsed(s) =       0.05 Per Step(ms) =       0.49
+|         ns/day =     352.70   seconds/ns =     244.97
+|
+| Average timings for all steps:
+|     Elapsed(s) =       0.05 Per Step(ms) =       0.49
+|         ns/day =     352.70   seconds/ns =     244.97
+|
+|
+| Estimated time remaining:      39.1 seconds.
+ ------------------------------------------------------------------------------

@@ -1,0 +1,10 @@
+
+ NSTEP =        0   TIME(PS) =       0.000  TEMP(K) =     0.00  PRESS =     0.0
+ Etot   =   -223026.5644  EKtot   =         0.0000  EPtot      =   -223026.5644
+ BOND   =     16538.4977  ANGLE   =      1396.4811  DIHED      =      6656.2458
+ 1-4 NB =      2204.9652  1-4 EEL =     24047.5196  VDWAALS    =     37521.7124
+ EELEC  =   -311391.9862  EHBOND  =         0.0000  RESTRAINT  =         0.0000
+ DV/DL  =       -13.8040
+ Ewald error estimate:   0.1070E-03
+ NMR restraints: Bond =    0.000   Angle =     0.000   Torsion =     0.000
+===============================================================================
