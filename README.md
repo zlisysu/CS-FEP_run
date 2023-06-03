@@ -7,8 +7,8 @@ This package is supported for *Linux*. The package has been tested on the follow
 + Linux: CentOs 7
 
 ### Simulation Software
-+ Amber with version >= 18 with self-modifying patch of the ti.F90 in AMBERHOME/src/pmemd/src in order to avoid the reorder the atoms of ligand.
-- To modify: The "ti_check_and_adjust_crd" subroutine of ti.F90 
++ Modified Amber with version >= 18. The source code file ti.F90 in AMBERHOME/src/pmemd/src was modified in order to avoid reordering the atoms of ligand.
+- To modify Amber software, patch files are provided for amber18 and amber 20. 
     - For amber18: use the `ti.F90.patch` and `patch.sh` in amber18_patch
     - For amber20: use the `ti.F90.patch` and `patch.sh` in amber20_patch
     
