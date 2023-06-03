@@ -9,72 +9,15 @@ This package is supported for *Linux*. The package has been tested on the follow
 ### Simulation Software
 + Amber with version >= 18 with self-modifying patch of the ti.F90 in AMBERHOME/src/pmemd/src in order to avoid the reorder the atoms of ligand.
 - To modify: The "ti_check_and_adjust_crd" subroutine of ti.F90 
-```fortran
-  !reorder atoms so that if linear atoms are out of order in the prmtop
-  !the simulation will still run
-  !by zli: no need to do this if using our method. corresponding codes are commented.
-  !ti_latm_lst_sort(:) = 0
-  !do i = 1, ti_latm_cnt(1)
-  !  do j = 1, ti_latm_cnt(1)
-  !    atm_i = ti_latm_lst(1,i)
-  !    atm_j = ti_latm_lst(2,j)
-  !    total_idx = 0
-  !    do m = 1, 3
-  !      crd_diff = abs(crd(m, atm_i) - crd(m, atm_j))
-  !      if (crd_diff .lt. 0.3d0) then
-  !        total_idx = total_idx + 1
-  !      end if
-  !    end do
-  !    if (total_idx .eq. 3) then
-  !      ti_latm_lst_sort(i) = atm_j
-  !    end if
-  !  end do
-  !end do
-
-  !ti_latm_lst(2,:) = ti_latm_lst_sort(:)
-
-  !do i = 1, ti_latm_cnt(1)
-  !  atm_i = ti_latm_lst(1,i)
-  !  atm_j = ti_latm_lst(2,i)
-  !  if (atm_j .eq. 0) then
-  !    write (mdout,'(a,i7,a)') '     Error : Atom ', &
-  !           atm_i,' does not have match in V1 !'
-  !    call mexit(mdout, 1)
-  !  end if
-  !end do
-
-  !do i = 1, ti_latm_cnt(1)
-  !   atm_i = ti_latm_lst(1,i)
-  !   atm_j = ti_latm_lst(2,i)
-  !   do m = 1, 3
-  !      crd_diff = abs(crd(m, atm_i) - crd(m, atm_j))
-  !      if (crd_diff .gt. 0.d0) then
-  !         if (crd_diff .gt. 0.3d0) then
-  !            write (mdout,'(a,i7,a,i7,a)') '     WARNING: Local coordinate ', &
-  !                 atm_i,' differs from partner coordinate ', atm_j,' !'
-  !            write (mdout,'(a)') &
-  !               '     Atom coordinate disagreement, check input files.'
-  !            call mexit(mdout, 1)
-  !         else
-  !            nadj = nadj + 1
-  !            crd(m, atm_j) = crd(m, atm_i)
-  !            if (nadj .lt. 11) then
-  !               if (nadj .lt. 10) then
-  !                  write (mdout,'(a,i7,a,i7,a)') &
-  !                     '     WARNING: Local coordinate ', &
-  !                     atm_i,' differs from partner coordinate ', atm_j,' !'
-  !                  write (mdout,'(a)') &
-  !                     '     Deviation is small, changing partner coordinate.'
-  !               else
-  !                  write (mdout,'(a)') &
-  !                     '     ... making more adjustments ...'
-  !               end if
-  !            end if
-  !         end if
-  !      end if
-  !   end do
-  !end do
-```
+    - For amber18: use the `ti.F90.patch` and `patch.sh` in amber18_patch
+    - For amber20: use the `ti.F90.patch` and `patch.sh` in amber20_patch
+    
+The cotent of `patch.sh`
+```sh 
+#!/bin/bash
+# cd the path ($AMBERHOME//src/pmemd/src) that the ti.F90 file exists.
+patch -p0 < ti.F90.patch
+```    
 The installation guide of Amber: http://ambermd.org/Installation.php
 - Typical install time of Amber on a "normal" desktop computer: about 40 mins.
 ### Analysis Code Dependencies
