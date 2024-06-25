@@ -50,6 +50,7 @@ for side in $SIDES;do
 done
 ```
 - Expected run time for demo's MD simulation on a "normal" desktop computer(with one gpu like Tesla V100-SXM3-32GB): 6-8 hours
+- More input files can be found here: https://www.scidb.cn/en/s/NrUrAz
 
 
 # Analysis
